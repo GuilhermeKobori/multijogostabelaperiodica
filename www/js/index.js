@@ -1,46 +1,135 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-var app = {
-    // Application Constructor
-    initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
-    },
+$(document).ready(function(){
 
-    // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
-    onDeviceReady: function() {
-        this.receivedEvent('deviceready');
-    },
+  $("#roll-dice").click(function(){
+    var MAXROLL = 10;
+    var result = Math.floor(MAXROLL * Math.random()) + 1;
+    $("#dice-result").replaceWith("<span id=\"dice-result\" class=\"dice-result\">" + result + "</span>");
+  });
 
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+  $("#select-element").click(function(){
+    var jsonObj;
+    var elementNumber = prompt("Selecione o elemento", "Número atômico");
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+    $.getJSON('../data/' + elementNumber + '.json', function(jsonObj) {
+      alert("Selecionado o elemento " + elementNumber);
 
-        console.log('Received Event: ' + id);
-    }
-};
+      $("#tips-table").replaceWith("\
+        <table id=\"tips-table\">\
+          <tr>\
+            <td><button id=\"toggle-tip-1\" class=\"w3-btn\">1</button></td>\
+            <td id=\"tip-1\" class=\"invisible\">" + jsonObj.tips[0].tip + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-2\" class=\"w3-btn\">2</button></td>\
+            <td id=\"tip-2\" class=\"invisible\">" + jsonObj.tips[1].tip + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-3\" class=\"w3-btn\">3</button></td>\
+            <td id=\"tip-3\" class=\"invisible\">" + jsonObj.tips[2].tip + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-4\" class=\"w3-btn\">4</button></td>\
+            <td id=\"tip-4\" class=\"invisible\">" + jsonObj.tips[3].tip + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-5\" class=\"w3-btn\">5</button></td>\
+            <td id=\"tip-5\" class=\"invisible\">" + jsonObj.tips[4].tip + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-6\" class=\"w3-btn\">6</button></td>\
+            <td id=\"tip-6\" class=\"invisible\">" + jsonObj.tips[5].tip + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-7\" class=\"w3-btn\">7</button></td>\
+            <td id=\"tip-7\" class=\"invisible\">" + jsonObj.tips[6].tip + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-8\" class=\"w3-btn\">8</button></td>\
+            <td id=\"tip-8\" class=\"invisible\">" + jsonObj.tips[7].tip + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-9\" class=\"w3-btn\">9</button></td>\
+            <td id=\"tip-9\" class=\"invisible\">" + jsonObj.tips[8].tip + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-10\" class=\"w3-btn\">10</button></td>\
+            <td id=\"tip-10\" class=\"invisible\">" + jsonObj.tips[9].tip + "</td>\
+          </tr>\
+        </table>\
+      ");
+    });
 
-app.initialize();
+  });
+
+  $(document).on('click', '#toggle-tip-1', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-1").addClass("w3-red");
+    if($("#tip-1").css('visibility') == 'hidden') $("#tip-1").css('visibility', 'visible');
+    else $("#tip-1").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#toggle-tip-2', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-2").addClass("w3-red");
+    if($("#tip-2").css('visibility') == 'hidden') $("#tip-2").css('visibility', 'visible');
+    else $("#tip-2").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#toggle-tip-3', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-3").addClass("w3-red");
+    if($("#tip-3").css('visibility') == 'hidden') $("#tip-3").css('visibility', 'visible');
+    else $("#tip-3").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#toggle-tip-4', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-4").addClass("w3-red");
+    if($("#tip-4").css('visibility') == 'hidden') $("#tip-4").css('visibility', 'visible');
+    else $("#tip-4").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#toggle-tip-5', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-5").addClass("w3-red");
+    if($("#tip-5").css('visibility') == 'hidden') $("#tip-5").css('visibility', 'visible');
+    else $("#tip-5").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#toggle-tip-6', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-6").addClass("w3-red");
+    if($("#tip-6").css('visibility') == 'hidden') $("#tip-6").css('visibility', 'visible');
+    else $("#tip-6").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#toggle-tip-7', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-7").addClass("w3-red");
+    if($("#tip-7").css('visibility') == 'hidden') $("#tip-7").css('visibility', 'visible');
+    else $("#tip-7").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#toggle-tip-8', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-8").addClass("w3-red");
+    if($("#tip-8").css('visibility') == 'hidden') $("#tip-8").css('visibility', 'visible');
+    else $("#tip-8").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#toggle-tip-9', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-9").addClass("w3-red");
+    if($("#tip-9").css('visibility') == 'hidden') $("#tip-9").css('visibility', 'visible');
+    else $("#tip-9").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#toggle-tip-10', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-10").addClass("w3-red");
+    if($("#tip-10").css('visibility') == 'hidden') $("#tip-10").css('visibility', 'visible');
+    else $("#tip-10").css('visibility', 'hidden');
+  });
+
+
+});
