@@ -17,43 +17,43 @@ $(document).ready(function(){
         <table id=\"tips-table\">\
           <tr>\
             <td><button id=\"toggle-tip-1\" class=\"w3-btn\">1</button></td>\
-            <td id=\"tip-1\" class=\"invisible\">" + jsonObj.tips[0].tip + "</td>\
+            <td id=\"tip-1\" class=\"invisible\">" + jsonObj.tips[0] + "</td>\
           </tr>\
           <tr>\
             <td><button id=\"toggle-tip-2\" class=\"w3-btn\">2</button></td>\
-            <td id=\"tip-2\" class=\"invisible\">" + jsonObj.tips[1].tip + "</td>\
+            <td id=\"tip-2\" class=\"invisible\">" + jsonObj.tips[1] + "</td>\
           </tr>\
           <tr>\
             <td><button id=\"toggle-tip-3\" class=\"w3-btn\">3</button></td>\
-            <td id=\"tip-3\" class=\"invisible\">" + jsonObj.tips[2].tip + "</td>\
+            <td id=\"tip-3\" class=\"invisible\">" + jsonObj.tips[2] + "</td>\
           </tr>\
           <tr>\
             <td><button id=\"toggle-tip-4\" class=\"w3-btn\">4</button></td>\
-            <td id=\"tip-4\" class=\"invisible\">" + jsonObj.tips[3].tip + "</td>\
+            <td id=\"tip-4\" class=\"invisible\">" + jsonObj.tips[3] + "</td>\
           </tr>\
           <tr>\
             <td><button id=\"toggle-tip-5\" class=\"w3-btn\">5</button></td>\
-            <td id=\"tip-5\" class=\"invisible\">" + jsonObj.tips[4].tip + "</td>\
+            <td id=\"tip-5\" class=\"invisible\">" + jsonObj.tips[4] + "</td>\
           </tr>\
           <tr>\
             <td><button id=\"toggle-tip-6\" class=\"w3-btn\">6</button></td>\
-            <td id=\"tip-6\" class=\"invisible\">" + jsonObj.tips[5].tip + "</td>\
+            <td id=\"tip-6\" class=\"invisible\">" + jsonObj.tips[5] + "</td>\
           </tr>\
           <tr>\
             <td><button id=\"toggle-tip-7\" class=\"w3-btn\">7</button></td>\
-            <td id=\"tip-7\" class=\"invisible\">" + jsonObj.tips[6].tip + "</td>\
+            <td id=\"tip-7\" class=\"invisible\">" + jsonObj.tips[6] + "</td>\
           </tr>\
           <tr>\
             <td><button id=\"toggle-tip-8\" class=\"w3-btn\">8</button></td>\
-            <td id=\"tip-8\" class=\"invisible\">" + jsonObj.tips[7].tip + "</td>\
+            <td id=\"tip-8\" class=\"invisible\">" + jsonObj.tips[7] + "</td>\
           </tr>\
           <tr>\
             <td><button id=\"toggle-tip-9\" class=\"w3-btn\">9</button></td>\
-            <td id=\"tip-9\" class=\"invisible\">" + jsonObj.tips[8].tip + "</td>\
+            <td id=\"tip-9\" class=\"invisible\">" + jsonObj.tips[8] + "</td>\
           </tr>\
           <tr>\
             <td><button id=\"toggle-tip-10\" class=\"w3-btn\">10</button></td>\
-            <td id=\"tip-10\" class=\"invisible\">" + jsonObj.tips[9].tip + "</td>\
+            <td id=\"tip-10\" class=\"invisible\">" + jsonObj.tips[9] + "</td>\
           </tr>\
         </table>\
       ");

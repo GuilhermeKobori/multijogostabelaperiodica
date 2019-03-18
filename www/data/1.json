@@ -1,12 +1,12 @@
 {"tips":[
-  { "tip":"First tip"},
-  { "tip":"Second tip"},
-  { "tip":"Third tip"},
-  { "tip":"Fourth tip"},
-  { "tip":"Fifth tip"},
-  { "tip":"Sixth tip"},
-  { "tip":"Seventh tip"},
-  { "tip":"Eighth tip"},
-  { "tip":"Ninth tip"},
-  { "tip":"Tenth tip"}
+  "First tip",
+  "Second tip",
+  "Third tip",
+  "Fourth tip",
+  "Fifth tip",
+  "Sixth tip",
+  "Seventh tip",
+  "Eighth tip",
+  "Ninth tip",
+  "Tenth tip"
 ]}
