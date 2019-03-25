@@ -8,62 +8,67 @@ $(document).ready(function(){
 
   $("#select-element").click(function(){
     var jsonObj;
-    var elementNumber;
 
-    navigator.notification.prompt("Selecione o elemento", promptCallback, "PROMPT", ["OK", "Cancel"], "Número atômico");
+    var elementNumber = prompt("Selecione o elemento", "Número atômico");
 
-    function promptCallback(result) {
-      elementNumber = result.input1;
+    var globalPath;
 
-      $.getJSON('../data/' + elementNumber + '.json', function(jsonObj) {
-        alert("Selecionado o elemento " + elementNumber);
+    switch (device.platform) {
+      case 'Android':
+        globalPath = 'file:///android_asset/www/data/';
+        break;
+      default:
+        globalPath = '../data/';
+    }
 
-        $("#tips-table").replaceWith("\
-          <table id=\"tips-table\">\
-            <tr>\
-              <td><button id=\"toggle-tip-1\" class=\"w3-btn\">1</button></td>\
-              <td id=\"tip-1\" class=\"invisible\">" + jsonObj.tips[0] + "</td>\
-            </tr>\
-            <tr>\
-              <td><button id=\"toggle-tip-2\" class=\"w3-btn\">2</button></td>\
-              <td id=\"tip-2\" class=\"invisible\">" + jsonObj.tips[1] + "</td>\
-            </tr>\
-            <tr>\
-              <td><button id=\"toggle-tip-3\" class=\"w3-btn\">3</button></td>\
-              <td id=\"tip-3\" class=\"invisible\">" + jsonObj.tips[2] + "</td>\
-            </tr>\
-            <tr>\
-              <td><button id=\"toggle-tip-4\" class=\"w3-btn\">4</button></td>\
-              <td id=\"tip-4\" class=\"invisible\">" + jsonObj.tips[3] + "</td>\
-            </tr>\
-            <tr>\
-              <td><button id=\"toggle-tip-5\" class=\"w3-btn\">5</button></td>\
-              <td id=\"tip-5\" class=\"invisible\">" + jsonObj.tips[4] + "</td>\
-            </tr>\
-            <tr>\
-              <td><button id=\"toggle-tip-6\" class=\"w3-btn\">6</button></td>\
-              <td id=\"tip-6\" class=\"invisible\">" + jsonObj.tips[5] + "</td>\
-            </tr>\
-            <tr>\
-              <td><button id=\"toggle-tip-7\" class=\"w3-btn\">7</button></td>\
-              <td id=\"tip-7\" class=\"invisible\">" + jsonObj.tips[6] + "</td>\
-            </tr>\
-            <tr>\
-              <td><button id=\"toggle-tip-8\" class=\"w3-btn\">8</button></td>\
-              <td id=\"tip-8\" class=\"invisible\">" + jsonObj.tips[7] + "</td>\
-            </tr>\
-            <tr>\
-              <td><button id=\"toggle-tip-9\" class=\"w3-btn\">9</button></td>\
-              <td id=\"tip-9\" class=\"invisible\">" + jsonObj.tips[8] + "</td>\
-            </tr>\
-            <tr>\
-              <td><button id=\"toggle-tip-10\" class=\"w3-btn\">10</button></td>\
-              <td id=\"tip-10\" class=\"invisible\">" + jsonObj.tips[9] + "</td>\
-            </tr>\
-          </table>\
-        ");
-      });
-    } 
+    $.getJSON(globalPath   + elementNumber + '.json', function(jsonObj) {
+      alert("Selecionado o elemento " + elementNumber);
+
+      $("#tips-table").replaceWith("\
+        <table id=\"tips-table\">\
+          <tr>\
+            <td><button id=\"toggle-tip-1\" class=\"w3-btn\">1</button></td>\
+            <td id=\"tip-1\" class=\"invisible\">" + jsonObj.tips[0] + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-2\" class=\"w3-btn\">2</button></td>\
+            <td id=\"tip-2\" class=\"invisible\">" + jsonObj.tips[1] + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-3\" class=\"w3-btn\">3</button></td>\
+            <td id=\"tip-3\" class=\"invisible\">" + jsonObj.tips[2] + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-4\" class=\"w3-btn\">4</button></td>\
+            <td id=\"tip-4\" class=\"invisible\">" + jsonObj.tips[3] + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-5\" class=\"w3-btn\">5</button></td>\
+            <td id=\"tip-5\" class=\"invisible\">" + jsonObj.tips[4] + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-6\" class=\"w3-btn\">6</button></td>\
+            <td id=\"tip-6\" class=\"invisible\">" + jsonObj.tips[5] + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-7\" class=\"w3-btn\">7</button></td>\
+            <td id=\"tip-7\" class=\"invisible\">" + jsonObj.tips[6] + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-8\" class=\"w3-btn\">8</button></td>\
+            <td id=\"tip-8\" class=\"invisible\">" + jsonObj.tips[7] + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-9\" class=\"w3-btn\">9</button></td>\
+            <td id=\"tip-9\" class=\"invisible\">" + jsonObj.tips[8] + "</td>\
+          </tr>\
+          <tr>\
+            <td><button id=\"toggle-tip-10\" class=\"w3-btn\">10</button></td>\
+            <td id=\"tip-10\" class=\"invisible\">" + jsonObj.tips[9] + "</td>\
+          </tr>\
+        </table>\
+      ");
+    });
   });
 
   $(document).on('click', '#toggle-tip-1', function(){
