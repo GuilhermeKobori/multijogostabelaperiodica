@@ -9,7 +9,7 @@ $(document).ready(function(){
   $("#select-element").click(function(){
     var jsonObj;
 
-    var elementNumber = prompt("Selecione o elemento", "Número atômico");
+    var elementNumber = prompt("Selecione o elemento");
 
     var globalPath;
 
