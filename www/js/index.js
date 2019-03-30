@@ -141,5 +141,74 @@ $(document).ready(function(){
     else $("#tip-10").css('visibility', 'hidden');
   });
 
+  $(document).on('click', '#tip-1', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-1").addClass("w3-red");
+    if($("#tip-1").css('visibility') == 'hidden') $("#tip-1").css('visibility', 'visible');
+    else $("#tip-1").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#tip-2', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-2").addClass("w3-red");
+    if($("#tip-2").css('visibility') == 'hidden') $("#tip-2").css('visibility', 'visible');
+    else $("#tip-2").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#tip-3', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-3").addClass("w3-red");
+    if($("#tip-3").css('visibility') == 'hidden') $("#tip-3").css('visibility', 'visible');
+    else $("#tip-3").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#tip-4', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-4").addClass("w3-red");
+    if($("#tip-4").css('visibility') == 'hidden') $("#tip-4").css('visibility', 'visible');
+    else $("#tip-4").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#tip-5', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-5").addClass("w3-red");
+    if($("#tip-5").css('visibility') == 'hidden') $("#tip-5").css('visibility', 'visible');
+    else $("#tip-5").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#tip-6', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-6").addClass("w3-red");
+    if($("#tip-6").css('visibility') == 'hidden') $("#tip-6").css('visibility', 'visible');
+    else $("#tip-6").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#tip-7', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-7").addClass("w3-red");
+    if($("#tip-7").css('visibility') == 'hidden') $("#tip-7").css('visibility', 'visible');
+    else $("#tip-7").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#tip-8', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-8").addClass("w3-red");
+    if($("#tip-8").css('visibility') == 'hidden') $("#tip-8").css('visibility', 'visible');
+    else $("#tip-8").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#tip-9', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-9").addClass("w3-red");
+    if($("#tip-9").css('visibility') == 'hidden') $("#tip-9").css('visibility', 'visible');
+    else $("#tip-9").css('visibility', 'hidden');
+  });
+
+  $(document).on('click', '#tip-10', function(){
+    //Mark the tips that have already been shown
+    $("#toggle-tip-10").addClass("w3-red");
+    if($("#tip-10").css('visibility') == 'hidden') $("#tip-10").css('visibility', 'visible');
+    else $("#tip-10").css('visibility', 'hidden');
+  });
 
 });
